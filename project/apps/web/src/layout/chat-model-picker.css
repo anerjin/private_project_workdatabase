@@ -1,0 +1,194 @@
+/* Ported from jake-doi/design_system apps/gallery/src/layouts/chat-model-picker.css @ 99d7ac2 (DOI-L-THREE-COLUMN) via jake-doi/cad. Submodule: anerjin/design_system @ f54ecbe (same layout code). Keep in sync when the layout changes upstream. */
+.chat-model-trigger.btn {
+  max-width: min(220px, 75%);
+  min-width: 0;
+  gap: 8px;
+}
+.chat-model-trigger > span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.chat-model-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background: rgb(0 0 0 / 30%);
+}
+.chat-model-picker {
+  position: fixed;
+  z-index: 111;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: min(640px, calc(100vw - 32px));
+  height: min(700px, calc(100dvh - 32px));
+  background: var(--color-base-100);
+  color: var(--doc-fg);
+  border: 1px solid var(--doc-border);
+  border-radius: 16px;
+  box-shadow: var(--doi-shadow-popup);
+  overflow: hidden;
+}
+.chat-model-picker-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 20px 16px;
+}
+.chat-model-picker-header h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.chat-model-picker-header p {
+  margin: 0;
+  color: var(--doc-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.chat-model-controls {
+  display: grid;
+  gap: 12px;
+  padding: 0 20px 16px;
+  border-bottom: 1px solid var(--doc-border);
+}
+.chat-model-controls > .input {
+  width: 100%;
+}
+.chat-model-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.chat-model-scopes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.chat-model-filter-row > .select {
+  width: 150px;
+  font-size: 12px;
+}
+.chat-model-result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: var(--doc-muted);
+}
+.chat-model-result-bar .select {
+  width: 150px;
+  font-size: 12px;
+}
+.chat-model-results {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+  padding: 0 12px 12px;
+  margin: 0;
+  scrollbar-width: thin;
+}
+.chat-model-row {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+}
+.chat-model-row:hover {
+  background: var(--doc-subtle);
+}
+.chat-model-row[data-selected='true'] {
+  background: var(--doc-subtle);
+  border-color: var(--doc-border);
+}
+.chat-model-choice {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  border-radius: 10px;
+}
+.chat-model-row-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chat-model-row-title strong {
+  font-size: 14px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.chat-model-id {
+  display: block;
+  font-size: 11px;
+  color: var(--doc-muted);
+  overflow-wrap: anywhere;
+  margin-top: 4px;
+}
+.chat-model-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--doc-muted);
+}
+.chat-model-favorite {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.chat-model-empty {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 36px 12px;
+  text-align: center;
+  font-size: 13px;
+}
+.chat-model-empty p {
+  color: var(--doc-muted);
+}
+.chat-model-more {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
+.chat-model-picker-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--doc-border);
+  color: var(--doc-muted);
+  font-size: 10px;
+}
+@media (max-width: 540px) {
+  .chat-model-picker-header {
+    padding: 16px 12px;
+  }
+  .chat-model-controls {
+    padding-inline: 12px;
+  }
+  .chat-model-result-bar {
+    padding-inline: 12px;
+  }
+  .chat-model-filter-row > .select {
+    width: 100%;
+  }
+}

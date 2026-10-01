@@ -1,0 +1,33 @@
+{
+  "name": "doi-kb",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AI와 대화하며 찾은 자료가 회사·개인 지식으로 쌓이는 지식베이스 웹 앱",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @doi-kb/web",
+    "build": "npm run build -w @doi-kb/web",
+    "preview": "npm run preview -w @doi-kb/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm run test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.19.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.7"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

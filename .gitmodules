@@ -1,0 +1,4 @@
+[submodule "project/vendor/design_system"]
+	path = project/vendor/design_system
+	url = https://github.com/anerjin/design_system.git
+	shallow = true
